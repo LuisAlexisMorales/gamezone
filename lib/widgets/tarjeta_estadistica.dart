@@ -15,7 +15,7 @@ class TarjetaEstadistica extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
     child: Padding(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(16),
       child: Row(
         children: [
           Icon(icono, color: Theme.of(context).colorScheme.primary),
