@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nombre": "Minecraft",
+    "nombre": "Minecraft Java",
     "genero": "Sandbox",
     "plataforma": "PC, Consolas, Móvil",
     "calificacion": 9.0,
