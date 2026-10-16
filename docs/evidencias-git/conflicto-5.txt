@@ -1,0 +1,93 @@
+CONFLICTO REAL DE PRÁCTICA 5
+Generado por el asistente; no acredita participación de dos personas.
+Archivo: assets/data/videojuegos.json
+Base: b59a1079cd09c692bcbf17ac3d09ac05a92bd8ee
+A: practica/conflicto-5-a (75dac0bb0e59531a3996dfe5e51dd953ce56e762)
+B: practica/conflicto-5-b (2a619173b5ae513581c13d88c7d64c608d416363)
+Comando: git merge --no-ff practica/conflicto-5-a
+Auto-merging assets/data/videojuegos.json
+CONFLICT (content): Merge conflict in assets/data/videojuegos.json
+Automatic merge failed; fix conflicts and then commit the result.
+ESTADO EN CONFLICTO:
+UU assets/data/videojuegos.json
+DIFF EN CONFLICTO:
+diff --cc assets/data/videojuegos.json
+index 84f62f3,073af56..0000000
+--- a/assets/data/videojuegos.json
++++ b/assets/data/videojuegos.json
+@@@ -1,7 -1,7 +1,11 @@@
+  [
+    {
+      "id": 1,
+++<<<<<<< HEAD
+ +    "nombre": "Minecraft Bedrock",
+++=======
++     "nombre": "Minecraft Java",
+++>>>>>>> practica/conflicto-5-a
+      "genero": "Sandbox",
+      "plataforma": "PC, Consolas, Móvil",
+      "calificacion": 9.0,
+CONTENIDO CON MARCADORES:
+[
+  {
+    "id": 1,
+<<<<<<< HEAD
+    "nombre": "Minecraft Bedrock",
+=======
+    "nombre": "Minecraft Java",
+>>>>>>> practica/conflicto-5-a
+    "genero": "Sandbox",
+    "plataforma": "PC, Consolas, Móvil",
+    "calificacion": 9.0,
+    "descripcion": "Explora mundos, construye estructuras y sobrevive utilizando tu creatividad.",
+    "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2399830/header.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "The Witcher 3",
+    "genero": "RPG",
+    "plataforma": "PC, PlayStation, Xbox, Nintendo Switch",
+    "calificacion": 9.5,
+    "descripcion": "Acompaña a Geralt en una aventura de fantasía con decisiones y misiones.",
+    "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Stardew Valley",
+    "genero": "Simulación",
+    "plataforma": "PC, Consolas, Móvil",
+    "calificacion": 9.0,
+    "descripcion": "Administra una granja, conoce habitantes y descubre los secretos del valle.",
+    "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Portal 2",
+    "genero": "Puzles",
+    "plataforma": "PC, Consolas",
+    "calificacion": 9.5,
+    "descripcion": "Resuelve desafíos utilizando portales y razonamiento espacial.",
+    "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Terraria",
+    "genero": "Aventura",
+    "plataforma": "PC, Consolas, Móvil",
+    "calificacion": 9.0,
+    "descripcion": "Explora, combate, recolecta recursos y construye en un mundo bidimensional.",
+    "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Hades",
+    "genero": "Acción",
+    "plataforma": "PC, Consolas",
+    "calificacion": 9.0,
+    "descripcion": "Lucha para escapar del inframundo en una aventura de acción roguelike.",
+    "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg"
+  }
+]
+
+Resolución: restaurar el valor de producción "nombre": "Minecraft"
+Commit de resolución: 8e484c41bb3455054da4560a63a0ae62557f01af

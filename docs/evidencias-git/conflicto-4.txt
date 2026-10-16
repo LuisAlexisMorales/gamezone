@@ -1,0 +1,73 @@
+CONFLICTO REAL DE PRÁCTICA 4
+Generado por el asistente; no acredita participación de dos personas.
+Archivo: lib/widgets/tarjeta_estadistica.dart
+Base: 77f0378751f7e223a07419e81df10b6931e346d3
+A: practica/conflicto-4-a (7fa6f3b296097d3b03ddb99406b61fc025a672d3)
+B: practica/conflicto-4-b (8ea77ce729257a3c3f8d5571616ecee9d85d0637)
+Comando: git merge --no-ff practica/conflicto-4-a
+Auto-merging lib/widgets/tarjeta_estadistica.dart
+CONFLICT (content): Merge conflict in lib/widgets/tarjeta_estadistica.dart
+Automatic merge failed; fix conflicts and then commit the result.
+ESTADO EN CONFLICTO:
+UU lib/widgets/tarjeta_estadistica.dart
+DIFF EN CONFLICTO:
+diff --cc lib/widgets/tarjeta_estadistica.dart
+index 94dda66,aff40c2..0000000
+--- a/lib/widgets/tarjeta_estadistica.dart
++++ b/lib/widgets/tarjeta_estadistica.dart
+@@@ -15,7 -15,7 +15,11 @@@ class TarjetaEstadistica extends Statel
+    @override
+    Widget build(BuildContext context) => Card(
+      child: Padding(
+++<<<<<<< HEAD
+ +      padding: const EdgeInsets.all(12),
+++=======
++       padding: const EdgeInsets.all(20),
+++>>>>>>> practica/conflicto-4-a
+        child: Row(
+          children: [
+            Icon(icono, color: Theme.of(context).colorScheme.primary),
+CONTENIDO CON MARCADORES:
+import 'package:flutter/material.dart';
+
+class TarjetaEstadistica extends StatelessWidget {
+  final IconData icono;
+  final String titulo;
+  final String valor;
+
+  const TarjetaEstadistica({
+    super.key,
+    required this.icono,
+    required this.titulo,
+    required this.valor,
+  });
+
+  @override
+  Widget build(BuildContext context) => Card(
+    child: Padding(
+<<<<<<< HEAD
+      padding: const EdgeInsets.all(12),
+=======
+      padding: const EdgeInsets.all(20),
+>>>>>>> practica/conflicto-4-a
+      child: Row(
+        children: [
+          Icon(icono, color: Theme.of(context).colorScheme.primary),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(titulo),
+                Text(valor, style: Theme.of(context).textTheme.titleLarge),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Resolución: restaurar el valor de producción EdgeInsets.all(16)
+Commit de resolución: b59a1079cd09c692bcbf17ac3d09ac05a92bd8ee
