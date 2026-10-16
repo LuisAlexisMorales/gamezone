@@ -13,7 +13,7 @@ class GameZoneApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GameZone',
+      title: 'GameZone - Jugadores',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.obtenerTema(),
       home: const NavegacionScreen(),
