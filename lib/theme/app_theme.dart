@@ -4,8 +4,7 @@ class AppTheme {
   static ThemeData obtenerTema() {
     const fondo = Color(0xFFF4F6FA);
     const principal = Color(0xFF24364B);
-    const acento = Color(0xFF4F8D91);
-
+    const acento = Color(0xFF4F9D91);
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: fondo,
