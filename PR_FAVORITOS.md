@@ -10,6 +10,7 @@ automáticamente y muestra un estado vacío al quitar el último juego.
 - Integración mínima en Inicio y Detalle, sin cambios en main.dart.
 - Compatibilidad con Dart 3.12 y actualización del lock para el SDK instalado.
 - flutter pub get completado, flutter analyze sin incidencias y 7 pruebas aprobadas.
+- flutter build web --release completado correctamente.
 
 Base: main. El PR #1 ya estaba fusionado al comenzar. Los favoritos se guardan
 en memoria durante la sesión. Perfil y la navegación general quedan fuera de

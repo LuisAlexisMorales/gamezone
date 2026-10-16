@@ -56,6 +56,7 @@ Resultados: pub get completado; analyze sin incidencias; 7 pruebas aprobadas
 duplicados, notificaciones, lista inmutable, alternancia, sincronización entre
 botones, navegación, eliminación desde detalle y lista, respaldo de imágenes,
 estado vacío con texto ampliado y acceso desde Inicio.
+También se ejecutó flutter build web --release correctamente (build/web).
 
 ## Defensa técnica
 
@@ -67,6 +68,9 @@ la colección de modificaciones externas. Validé el flujo con pruebas unitarias
 y de widgets sin modificar la contribución del integrante 1.
 
 ## Publicar
+
+El intento de push fue rechazado por GitHub: usuario o token inválido. No se
+publicó la rama ni se creó un PR. El commit de implementación es 4d85096.
 
 Una vez autenticado en GitHub con acceso de escritura:
 
