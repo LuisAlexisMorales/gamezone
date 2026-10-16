@@ -4,6 +4,7 @@ import '../models/videojuego.dart';
 import '../services/videojuego_service.dart';
 import '../widgets/tarjeta_videojuego.dart';
 import '../widgets/etiqueta_genero.dart';
+import 'detalle_screen.dart';
 
 class CatalogoScreen extends StatefulWidget {
   const CatalogoScreen({super.key});
@@ -139,25 +140,11 @@ class _CatalogoScreenState extends State<CatalogoScreen> {
                           return TarjetaVideojuego(
                             videojuego: juego,
                             alPresionar: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                  title: Text(juego.nombre),
-                                  content: SingleChildScrollView(
-                                    child: Text(
-                                      '${juego.descripcion}\n\n'
-                                      'Género: ${juego.genero}\n'
-                                      'Plataforma: ${juego.plataforma}\n'
-                                      'Calificación: '
-                                      '${juego.calificacion}',
-                                    ),
-                                  ),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: const Text('Cerrar'),
-                                    ),
-                                  ],
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetalleScreen(videojuego: juego),
                                 ),
                               );
                             },
