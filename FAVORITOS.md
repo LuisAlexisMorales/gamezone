@@ -67,16 +67,13 @@ cambio en Detalle se refleja en Favoritos. Evité duplicados por ID y protegí
 la colección de modificaciones externas. Validé el flujo con pruebas unitarias
 y de widgets sin modificar la contribución del integrante 1.
 
-## Publicar
+## Publicación
 
-El intento de push fue rechazado por GitHub: usuario o token inválido. No se
-publicó la rama ni se creó un PR. El commit de implementación es 4d85096.
+La rama feature/favoritos ya se publicó correctamente en GitHub con la cuenta
+al3-dan. El commit de implementación es 4d85096.
 
-Una vez autenticado en GitHub con acceso de escritura:
+Se creó el [Pull Request #2](https://github.com/LuisAlexisMorales/gamezone/pull/2)
+con base main y comparación feature/favoritos. La contribución está publicada
+para revisión del equipo; no se fusionó automáticamente.
 
-```powershell
-git push -u origin feature/favoritos
-```
-
-Crear el PR con base main y comparación feature/favoritos. Usar el título y
-descripción de PR_FAVORITOS.md. No fusionarlo automáticamente.
+El título y la descripción de la contribución están en PR_FAVORITOS.md.
