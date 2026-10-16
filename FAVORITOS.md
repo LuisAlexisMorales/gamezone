@@ -1,5 +1,9 @@
 # Contribución del integrante 2: Favoritos
 
+Este documento describe la primera etapa (PR #2). Perfil y navegación se
+completaron después en el [PR #3](https://github.com/LuisAlexisMorales/gamezone/pull/3).
+La entrega actual está descrita en [INTEGRANTE_2.md](INTEGRANTE_2.md).
+
 Repositorio: LuisAlexisMorales/gamezone. Integrante: al3-dan.
 Rama: feature/favoritos, basada en main después de la fusión del PR #1.
 

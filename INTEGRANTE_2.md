@@ -66,6 +66,9 @@ feature/favoritos (PR #2). Revisar y fusionar primero Favoritos. Después,
 cambiar la base del segundo PR a main si fuera necesario y revisar Perfil y
 navegación. Ningún PR se fusiona automáticamente.
 
+Pull Request de la segunda etapa:
+[PR #3](https://github.com/LuisAlexisMorales/gamezone/pull/3).
+
 Los cinco conflictos reales de práctica están documentados en
 [docs/CONFLICTOS_GIT.md](docs/CONFLICTOS_GIT.md). Fueron generados y resueltos
 por el asistente en ramas aisladas: no acreditan participación de dos personas.
