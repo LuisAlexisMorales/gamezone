@@ -6,6 +6,7 @@ import '../widgets/tarjeta_videojuego.dart';
 import '../widgets/encabezado_seccion.dart';
 import 'catalogo_screen.dart';
 import 'detalle_screen.dart';
+import 'favoritos_screen.dart';
 
 class InicioScreen extends StatelessWidget {
   InicioScreen({super.key});
@@ -18,6 +19,16 @@ class InicioScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('GameZone'),
         actions: [
+          IconButton(
+            tooltip: 'Abrir favoritos',
+            icon: const Icon(Icons.favorite),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (context) => const FavoritosScreen(),
+              ),
+            ),
+          ),
           IconButton(
             tooltip: 'Abrir catálogo',
             icon: const Icon(Icons.grid_view_rounded),
