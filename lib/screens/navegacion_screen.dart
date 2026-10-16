@@ -33,7 +33,7 @@ class _NavegacionScreenState extends State<NavegacionScreen> {
       selectedIndex: indice,
       onDestinationSelected: seleccionar,
       destinations: const [
-        NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Inicio'),
+        NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Portada'),
         NavigationDestination(
           icon: Icon(Icons.grid_view_rounded),
           label: 'Catálogo',
