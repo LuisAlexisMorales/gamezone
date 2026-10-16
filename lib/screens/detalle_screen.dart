@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
 
 import '../models/videojuego.dart';
+import '../services/favoritos_service.dart';
+import '../widgets/boton_favorito.dart';
 import '../widgets/portada_videojuego.dart';
 import '../widgets/etiqueta_genero.dart';
 import '../widgets/calificacion.dart';
 
 class DetalleScreen extends StatelessWidget {
   final Videojuego videojuego;
+  final FavoritosService? favoritosService;
 
-  const DetalleScreen({super.key, required this.videojuego});
+  const DetalleScreen({
+    super.key,
+    required this.videojuego,
+    this.favoritosService,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Detalle del videojuego')),
+      appBar: AppBar(
+        title: const Text('Detalle del videojuego'),
+        actions: [
+          BotonFavorito(videojuego: videojuego, servicio: favoritosService),
+        ],
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
