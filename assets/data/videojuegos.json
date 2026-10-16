@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-"nombre": "Minecraft Bedrock",    "genero": "Sandbox",
+"nombre": "Minecraft",
+"genero": "Sandbox",
     "plataforma": "PC, Consolas, Móvil",
     "calificacion": 9.0,
     "descripcion": "Explora mundos, construye estructuras y sobrevive utilizando tu creatividad.",
