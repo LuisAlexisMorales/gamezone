@@ -4,6 +4,7 @@ import '../models/videojuego.dart';
 import '../services/videojuego_service.dart';
 import '../widgets/tarjeta_videojuego.dart';
 import '../widgets/etiqueta_genero.dart';
+import '../widgets/estado_vacio.dart';
 import 'detalle_screen.dart';
 
 class CatalogoScreen extends StatefulWidget {
@@ -45,12 +46,10 @@ class _CatalogoScreenState extends State<CatalogoScreen> {
           }
 
           if (snapshot.hasError) {
-            return Center(
-              child: Text(
-                'Error al cargar los videojuegos:\n'
-                '${snapshot.error}',
-                textAlign: TextAlign.center,
-              ),
+            return const EstadoVacio(
+              icono: Icons.error_outline,
+              titulo: 'No fue posible cargar el catálogo',
+              descripcion: 'Regresa a Inicio y vuelve a intentarlo.',
             );
           }
 
@@ -128,8 +127,10 @@ class _CatalogoScreenState extends State<CatalogoScreen> {
               ),
               Expanded(
                 child: filtrados.isEmpty
-                    ? const Center(
-                        child: Text('No se encontraron videojuegos.'),
+                    ? const EstadoVacio(
+                        icono: Icons.search_off,
+                        titulo: 'No se encontraron videojuegos',
+                        descripcion: 'Prueba otro nombre o cambia el género.',
                       )
                     : ListView.builder(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
