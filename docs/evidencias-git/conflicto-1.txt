@@ -1,0 +1,59 @@
+CONFLICTO REAL DE PRÁCTICA 1
+Generado por el asistente; no acredita participación de dos personas.
+Archivo: lib/main.dart
+Base: 89e4766c72a19c507398fcc884bd61ce39a09d8a
+A: practica/conflicto-1-a (91c7f9214f338af3118a2a60d827204e89785b09)
+B: practica/conflicto-1-b (a3f2e8b26f1421560fbfc6ec75e2d00746fdbf7b)
+Comando: git merge --no-ff practica/conflicto-1-a
+Auto-merging lib/main.dart
+CONFLICT (content): Merge conflict in lib/main.dart
+Automatic merge failed; fix conflicts and then commit the result.
+ESTADO EN CONFLICTO:
+UU lib/main.dart
+DIFF EN CONFLICTO:
+diff --cc lib/main.dart
+index d8bb374,075504e..0000000
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@@ -13,7 -13,7 +13,11 @@@ class GameZoneApp extends StatelessWidg
+    @override
+    Widget build(BuildContext context) {
+      return MaterialApp(
+++<<<<<<< HEAD
+ +      title: 'GameZone - Jugadores',
+++=======
++       title: 'GameZone - Comunidad',
+++>>>>>>> practica/conflicto-1-a
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.obtenerTema(),
+        home: const NavegacionScreen(),
+CONTENIDO CON MARCADORES:
+import 'package:flutter/material.dart';
+
+import 'screens/navegacion_screen.dart';
+import 'theme/app_theme.dart';
+
+void main() {
+  runApp(const GameZoneApp());
+}
+
+class GameZoneApp extends StatelessWidget {
+  const GameZoneApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+<<<<<<< HEAD
+      title: 'GameZone - Jugadores',
+=======
+      title: 'GameZone - Comunidad',
+>>>>>>> practica/conflicto-1-a
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.obtenerTema(),
+      home: const NavegacionScreen(),
+    );
+  }
+}
+
+Resolución: restaurar el valor de producción title: 'GameZone'
+Commit de resolución: 4363522e775369c7b8e844e009801c826484c81e

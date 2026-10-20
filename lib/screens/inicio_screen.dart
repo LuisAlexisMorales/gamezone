@@ -9,7 +9,10 @@ import 'detalle_screen.dart';
 import 'favoritos_screen.dart';
 
 class InicioScreen extends StatelessWidget {
-  InicioScreen({super.key});
+  final VoidCallback? alAbrirCatalogo;
+  final VoidCallback? alAbrirFavoritos;
+
+  InicioScreen({super.key, this.alAbrirCatalogo, this.alAbrirFavoritos});
 
   final VideojuegoService servicio = VideojuegoService();
 
@@ -22,22 +25,28 @@ class InicioScreen extends StatelessWidget {
           IconButton(
             tooltip: 'Abrir favoritos',
             icon: const Icon(Icons.favorite),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute<void>(
-                builder: (context) => const FavoritosScreen(),
-              ),
-            ),
+            onPressed:
+                alAbrirFavoritos ??
+                () => Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (context) => const FavoritosScreen(),
+                  ),
+                ),
           ),
           IconButton(
             tooltip: 'Abrir catálogo',
             icon: const Icon(Icons.grid_view_rounded),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const CatalogoScreen()),
-              );
-            },
+            onPressed:
+                alAbrirCatalogo ??
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CatalogoScreen(),
+                    ),
+                  );
+                },
           ),
         ],
       ),
@@ -85,14 +94,16 @@ class InicioScreen extends StatelessWidget {
               EncabezadoSeccion(
                 titulo: 'Juegos destacados',
                 accion: 'Ver catálogo',
-                alPresionar: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CatalogoScreen(),
-                    ),
-                  );
-                },
+                alPresionar:
+                    alAbrirCatalogo ??
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CatalogoScreen(),
+                        ),
+                      );
+                    },
               ),
               const SizedBox(height: 12),
               for (final Videojuego juego in destacados)
@@ -109,14 +120,16 @@ class InicioScreen extends StatelessWidget {
                 ),
               const SizedBox(height: 12),
               FilledButton.icon(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CatalogoScreen(),
-                    ),
-                  );
-                },
+                onPressed:
+                    alAbrirCatalogo ??
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CatalogoScreen(),
+                        ),
+                      );
+                    },
                 icon: const Icon(Icons.explore),
                 label: const Text('Explorar todos los juegos'),
               ),

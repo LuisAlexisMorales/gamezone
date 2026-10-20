@@ -1,0 +1,89 @@
+CONFLICTO REAL DE PRÁCTICA 3
+Generado por el asistente; no acredita participación de dos personas.
+Archivo: lib/screens/navegacion_screen.dart
+Base: f9a69d20ba3e84cfc6e0dcb6c8c84117939aa289
+A: practica/conflicto-3-a (06139a39a0a30bbed65ba1d0734fbd01b509f8dd)
+B: practica/conflicto-3-b (514b5e540c533cca15e1d966153ca64f076b1070)
+Comando: git merge --no-ff practica/conflicto-3-a
+Auto-merging lib/screens/navegacion_screen.dart
+CONFLICT (content): Merge conflict in lib/screens/navegacion_screen.dart
+Automatic merge failed; fix conflicts and then commit the result.
+ESTADO EN CONFLICTO:
+UU lib/screens/navegacion_screen.dart
+DIFF EN CONFLICTO:
+diff --cc lib/screens/navegacion_screen.dart
+index 1330d0a,be42b76..0000000
+--- a/lib/screens/navegacion_screen.dart
++++ b/lib/screens/navegacion_screen.dart
+@@@ -33,7 -33,7 +33,11 @@@ class _NavegacionScreenState extends St
+        selectedIndex: indice,
+        onDestinationSelected: seleccionar,
+        destinations: const [
+++<<<<<<< HEAD
+ +        NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Portada'),
+++=======
++         NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Principal'),
+++>>>>>>> practica/conflicto-3-a
+          NavigationDestination(
+            icon: Icon(Icons.grid_view_rounded),
+            label: 'Catálogo',
+CONTENIDO CON MARCADORES:
+import 'package:flutter/material.dart';
+
+import 'catalogo_screen.dart';
+import 'favoritos_screen.dart';
+import 'inicio_screen.dart';
+import 'perfil_screen.dart';
+
+class NavegacionScreen extends StatefulWidget {
+  const NavegacionScreen({super.key});
+
+  @override
+  State<NavegacionScreen> createState() => _NavegacionScreenState();
+}
+
+class _NavegacionScreenState extends State<NavegacionScreen> {
+  int indice = 0;
+  late final List<Widget> pantallas = [
+    InicioScreen(
+      alAbrirCatalogo: () => seleccionar(1),
+      alAbrirFavoritos: () => seleccionar(2),
+    ),
+    const CatalogoScreen(),
+    const FavoritosScreen(),
+    const PerfilScreen(),
+  ];
+
+  void seleccionar(int nuevoIndice) => setState(() => indice = nuevoIndice);
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    body: IndexedStack(index: indice, children: pantallas),
+    bottomNavigationBar: NavigationBar(
+      selectedIndex: indice,
+      onDestinationSelected: seleccionar,
+      destinations: const [
+<<<<<<< HEAD
+        NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Portada'),
+=======
+        NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Principal'),
+>>>>>>> practica/conflicto-3-a
+        NavigationDestination(
+          icon: Icon(Icons.grid_view_rounded),
+          label: 'Catálogo',
+        ),
+        NavigationDestination(
+          icon: Icon(Icons.favorite_border),
+          label: 'Favoritos',
+        ),
+        NavigationDestination(
+          icon: Icon(Icons.person_outline),
+          label: 'Perfil',
+        ),
+      ],
+    ),
+  );
+}
+
+Resolución: restaurar el valor de producción label: 'Inicio'
+Commit de resolución: 77f0378751f7e223a07419e81df10b6931e346d3
