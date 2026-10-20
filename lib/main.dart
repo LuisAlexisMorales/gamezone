@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/inicio_screen.dart';
+import 'screens/navegacion_screen.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class GameZoneApp extends StatelessWidget {
       title: 'GameZone',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.obtenerTema(),
-      home: InicioScreen(),
+      home: const NavegacionScreen(),
     );
   }
 }
