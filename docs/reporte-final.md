@@ -22,7 +22,7 @@
 
 > **Pendiente de completar por la bina:** crear el archivo en Figma, pegar el link y exportar las capturas finales.
 
-- **Link Figma:** _[pegar aquí el enlace compartido]_
+- **Link Figma (Figma Make):** https://www.figma.com/make/OzjR4hEX8CiofjU180JBIg/Dise%C3%B1ar-pantallas-de-GameZone?code-node-id=0-6&p=f&t=JtazEkRX8PPqLjbD-0&fullscreen=1
 - **Guía de diseño:** ver `docs/FIGMA.md` (tokens, layout por pantalla, notas de API).
 - **Referencias visuales generadas desde la app real:** `docs/figma/01-inicio.png` … `05-perfil.png`.
 
@@ -260,7 +260,7 @@ Las pruebas de API (`test/api_test.dart`) usan `MockClient` de `package:http/tes
 
 ## Anexos / pendientes para cerrar entrega
 
-- [ ] Pegar **link de Figma** en la sección 2.
+- [x] Pegar **link de Figma** en la sección 2.
 - [ ] Completar nombres de la **bina** en portada.
 - [ ] Exportar capturas Figma finales a `docs/figma/` (o enlazarlas).
 - [ ] Crear PR de `feature/api-videojuegos` → `main` y fusionar si el equipo lo aprueba.
