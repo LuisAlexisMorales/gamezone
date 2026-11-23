@@ -2,28 +2,63 @@ import 'package:flutter/material.dart';
 
 import '../models/videojuego.dart';
 import '../services/favoritos_service.dart';
+import '../services/videojuego_service.dart';
 import '../widgets/boton_favorito.dart';
 import '../widgets/portada_videojuego.dart';
 import '../widgets/etiqueta_genero.dart';
 import '../widgets/calificacion.dart';
 
-class DetalleScreen extends StatelessWidget {
+class DetalleScreen extends StatefulWidget {
   final Videojuego videojuego;
   final FavoritosService? favoritosService;
+  final VideojuegoService? servicio;
 
   const DetalleScreen({
     super.key,
     required this.videojuego,
     this.favoritosService,
+    this.servicio,
   });
 
   @override
+  State<DetalleScreen> createState() => _DetalleScreenState();
+}
+
+class _DetalleScreenState extends State<DetalleScreen> {
+  late Videojuego _videojuego;
+  late final VideojuegoService _servicio;
+
+  @override
+  void initState() {
+    super.initState();
+    _videojuego = widget.videojuego;
+    _servicio = widget.servicio ?? VideojuegoService();
+    _actualizarDesdeApi();
+  }
+
+  /// Consume `GET /videojuegos/:id` al abrir la pantalla para mostrar
+  /// los datos más recientes. Si la API no responde, se conserva el
+  /// videojuego recibido desde la lista.
+  Future<void> _actualizarDesdeApi() async {
+    final actualizado = await _servicio.cargarVideojuegoPorId(
+      _videojuego.id,
+      respaldo: _videojuego,
+    );
+    if (!mounted) return;
+    setState(() {
+      _videojuego = actualizado;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final videojuego = _videojuego;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detalle del videojuego'),
         actions: [
-          BotonFavorito(videojuego: videojuego, servicio: favoritosService),
+          BotonFavorito(videojuego: videojuego, servicio: widget.favoritosService),
         ],
       ),
       body: SingleChildScrollView(
